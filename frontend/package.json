@@ -1,0 +1,22 @@
+{
+  "name": "straggle-frontend",
+  "private": true,
+  "version": "0.1.1",
+  "type": "module",
+  "description": "Straggle frontend (Material Web + Vite); the Go side embeds the build into a single exe.",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 4173 --strictPort"
+  },
+  "dependencies": {
+    "@fontsource/roboto": "^5.0.0",
+    "@material/web": "^2.0.0",
+    "lit": "^3.1.0",
+    "material-symbols": "latest"
+  },
+  "devDependencies": {
+    "vite": "^5.4.0"
+  }
+}

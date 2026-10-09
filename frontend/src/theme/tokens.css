@@ -1,0 +1,140 @@
+/* ============================================================================
+ * Straggle design tokens: Material 3 Expressive (Teal) + desktop density
+ *
+ * This file is the only place in the project allowed to contain colour literals;
+ * everything else references tokens by role, e.g. var(--md-sys-color-primary).
+ *
+ * Light and dark: each colour is written once as light-dark(light, dark);
+ * color-scheme decides which side applies. The Go side pushes the system theme
+ * into <html data-theme> (light/dark); when the attribute is absent the system
+ * preference is followed, so the first frame never flashes the wrong theme.
+ * ========================================================================= */
+
+:root {
+  color-scheme: light dark;
+
+  /* ---- Colour roles ---- */
+  --md-sys-color-primary: light-dark(#00696e, #83d4d8);
+  --md-sys-color-on-primary: light-dark(#ffffff, #063639);
+  --md-sys-color-primary-container: light-dark(#9cf1f6, #0b4f52);
+  --md-sys-color-on-primary-container: light-dark(#002022, #9ff0f5);
+
+  --md-sys-color-secondary: light-dark(#4d6263, #b3cbcc);
+  --md-sys-color-on-secondary: light-dark(#ffffff, #1b3436);
+  --md-sys-color-secondary-container: light-dark(#cce8e9, #354a4c);
+  --md-sys-color-on-secondary-container: light-dark(#051f20, #cfe7e8);
+
+  --md-sys-color-tertiary: light-dark(#3d6188, #aec7ea);
+  --md-sys-color-on-tertiary: light-dark(#ffffff, #0b2843);
+  --md-sys-color-tertiary-container: light-dark(#d2e4ff, #38485a);
+  --md-sys-color-on-tertiary-container: light-dark(#001c3b, #d3e4fa);
+
+  --md-sys-color-surface: light-dark(#f4fbfb, #0d1515);
+  --md-sys-color-surface-dim: light-dark(#d4dcdc, #0d1515);
+  --md-sys-color-surface-bright: light-dark(#f4fbfb, #333b3b);
+  --md-sys-color-surface-container-lowest: light-dark(#ffffff, #080f0f);
+  --md-sys-color-surface-container-low: light-dark(#eef5f5, #161d1d);
+  --md-sys-color-surface-container: light-dark(#e8efef, #1a2121);
+  --md-sys-color-surface-container-high: light-dark(#e2eaea, #252b2b);
+  --md-sys-color-surface-container-highest: light-dark(#dde4e4, #2f3636);
+
+  --md-sys-color-on-surface: light-dark(#161d1d, #dce4e4);
+  --md-sys-color-on-surface-variant: light-dark(#3f4948, #b7cacb);
+  --md-sys-color-outline: light-dark(#6f7979, #819495);
+  --md-sys-color-outline-variant: light-dark(#bec8c8, #394a4b);
+
+  --md-sys-color-inverse-surface: light-dark(#2b3232, #dce4e4);
+  --md-sys-color-inverse-on-surface: light-dark(#ecf2f2, #2b3232);
+  --md-sys-color-inverse-primary: light-dark(#80d5da, #00696e);
+
+  --md-sys-color-error: light-dark(#b3261e, #f2b8b5);
+  --md-sys-color-on-error: light-dark(#ffffff, #601410);
+  --md-sys-color-error-container: light-dark(#f9dedc, #8c1d18);
+  --md-sys-color-on-error-container: light-dark(#410e0b, #f9dedc);
+
+  --md-sys-color-scrim: light-dark(#000000, #000000);
+  --md-sys-color-shadow: light-dark(#000000, #000000);
+
+  /* ---- Window buttons: macOS-style traffic lights (drawn in-page instead of system title-bar buttons) ---- */
+  --win-ctl-close: light-dark(#ff5f57, #ff5f57);
+  --win-ctl-minimise: light-dark(#febc2e, #febc2e);
+  --win-ctl-zoom: light-dark(#28c840, #28c840);
+  --win-ctl-idle: light-dark(#d4d2d0, #4a4a4a); /* whole group greys out while the window is unfocused */
+  --win-ctl-ring: light-dark(rgba(0, 0, 0, 0.14), transparent);
+
+  /* ---- Fonts: Roboto (Latin/digits) + system CJK fallback ----
+     Roboto carries no CJK glyphs; Chinese falls through to system fonts, which avoids embedding several MB of CJK font data. */
+  --app-font-family: Roboto, 'Roboto Flex', 'Microsoft YaHei UI', 'Microsoft YaHei',
+    'PingFang SC', 'Noto Sans CJK SC', 'Segoe UI', system-ui, sans-serif;
+  --app-font-mono: 'Roboto Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
+  --md-icon-font: 'Material Symbols Rounded';
+
+  /* ---- Type scale (desktop density, one step down from mobile) ---- */
+  --app-type-title: 20px; /* page title */
+  --app-type-title-lh: 26px;
+  --app-type-subtitle: 14px; /* pane title / brand */
+  --app-type-subtitle-lh: 20px;
+  --app-type-body: 13px; /* body text */
+  --app-type-body-lh: 18px;
+  --app-type-label: 12px; /* label / button */
+  --app-type-label-lh: 16px;
+  --app-type-micro: 11px; /* badge */
+  --app-type-micro-lh: 14px;
+
+  /* ---- Shape ---- */
+  --app-radius-sm: 8px;
+  --app-radius-md: 12px;
+  --app-radius-lg: 16px;
+  --app-radius-full: 999px;
+
+  /* ---- Dimensions (desktop) ---- */
+  --app-appbar-height: 48px;
+  --app-sidebar-width: 184px;
+  --app-pane-width: 320px;
+  --app-edge: 20px; /* horizontal inset of the content area */
+  --app-control-height: 40px; /* button / input / nav item */
+  --app-row-height: 44px; /* list row */
+  --app-lead-size: 28px; /* circular icon at the start of a list row */
+  --app-gap: 12px;
+
+  /* Window buttons (pinned to the top-right corner of the window) */
+  --app-winctl-size: 20px; /* click target */
+  --app-winctl-dot: 12px; /* dot diameter (matches macOS) */
+  --app-winctl-inset: 12px; /* distance from the dot group to the window's right edge */
+  --app-winctl-zone: 76px; /* width reserved at the right of the top bar for the window buttons */
+
+  /* ---- Motion: MotionScheme.standard(); decelerate/standard curves only, no bounce ---- */
+  --app-ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --app-ease-decelerate: cubic-bezier(0.05, 0.7, 0.1, 1);
+  --app-duration-short: 120ms;
+  --app-duration-medium: 200ms;
+
+  /* ---- Material Web component token overrides (library defaults target the mobile baseline) ---- */
+  --md-filled-button-container-height: var(--app-control-height);
+  --md-filled-tonal-button-container-height: var(--app-control-height);
+  --md-text-button-container-height: var(--app-control-height);
+  --md-filled-button-container-shape: var(--app-radius-full);
+  --md-filled-tonal-button-container-shape: var(--app-radius-full);
+  --md-text-button-container-shape: var(--app-radius-full);
+  --md-dialog-container-shape: var(--app-radius-lg);
+  --md-outlined-select-container-shape: var(--app-radius-md);
+  --md-menu-container-shape: var(--app-radius-sm);
+  --md-menu-container-color: var(--md-sys-color-surface-container);
+  --md-menu-item-container-height: var(--app-control-height);
+  --md-switch-selected-track-color: var(--md-sys-color-primary);
+  --md-switch-selected-handle-color: var(--md-sys-color-on-primary);
+  --md-switch-selected-hover-track-color: var(--md-sys-color-primary);
+  --md-switch-selected-pressed-track-color: var(--md-sys-color-primary);
+  --md-switch-selected-focus-track-color: var(--md-sys-color-primary);
+  --md-divider-color: var(--md-sys-color-outline-variant);
+}
+
+/* Theme switch: the Go side writes the system theme into <html data-theme>; this only changes
+   color-scheme, and every light-dark() colour follows. A missing attribute follows the system. */
+:root[data-theme='light'] {
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+}

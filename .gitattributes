@@ -1,0 +1,2 @@
+# One line ending everywhere: LF in the repository and in the working tree.
+* text=auto eol=lf
